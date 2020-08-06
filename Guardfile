@@ -36,6 +36,8 @@ guard :minitest, spring: "bin/rails test", all_on_start: false do
   end
 end
 
+notification :off
+
 # Returns the integration tests corresponding to the given resource.
 def integration_tests(resource = :all)
   if resource == :all
