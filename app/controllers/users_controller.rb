@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i[edit update]
+  before_action :logged_in_user, only: %i[index edit update destroy]
   before_action :correct_user, only: %i[edit update]
 
   def show
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'Welcome to My Nopes App'
+      flash[:success] = 'Welcome to My Notes App'
       redirect_to @user
     else
       flash[:danger] = 'Incorrect'
@@ -43,10 +43,11 @@ class UsersController < ApplicationController
 
   # before filters
   def logged_in_user
-    return unless logged_in?
-    store_location
-    flash[:danger] = 'Please log in.'
-    redirect_to login_url
+    unless logged_in?
+      # store_location
+      flash[:danger] = 'Please log in.'
+      redirect_to login_url
+    end
   end
 
   # confirms correct user
