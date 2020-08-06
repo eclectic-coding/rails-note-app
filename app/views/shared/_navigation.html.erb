@@ -18,7 +18,7 @@
             </a>
             <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
               <%= link_to 'Profile', current_user, class: 'nav-link bg-dark' %>
-              <%= link_to 'Settings', '#', class: 'nav-link bg-dark' %>
+              <%= link_to 'Settings', edit_user_path(current_user), class: 'nav-link bg-dark' %>
               <div class="dropdown-divider"></div>
               <%= link_to 'Log out', logout_path, method: :delete, class: 'nav-link bg-dark' %>
             </div>

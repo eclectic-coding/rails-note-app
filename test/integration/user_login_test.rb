@@ -14,7 +14,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_template 'sessions/new'
     assert_not flash.empty?
     get root_path
-    assert_not flash.empty?
+    assert flash.empty?
   end
 
   test 'valid login credentials followed by logout' do
@@ -33,9 +33,9 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
     delete logout_path
     follow_redirect!
-    assert_select 'a[href=?]', login_path, count: 0
-    assert_select 'a[href=?]', logout_path, count: 1
-    assert_select 'a[href=?]', user_path(@user), count: 1
+    assert_select 'a[href=?]', login_path
+    assert_select 'a[href=?]', logout_path, count: 0
+    assert_select 'a[href=?]', user_path(@user), count: 0
   end
 
   test 'login with remembering' do
