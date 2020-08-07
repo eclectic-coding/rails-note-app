@@ -8,6 +8,8 @@
 
 Note App allows users to create an account, then the user can create notes to edit, delete, and update as they see fit, via a user dashboard in which they can manage a list of personal notes.
 
+Live Demo: at [Heroku](https://cs-note-app.herokuapp.com/)
+
 ## Features 
 
 ### Login 
@@ -20,7 +22,10 @@ The My Notes App has a robust user authentication feature including:
 - User Profile edit/updates  
 
 ### Notes 
-Working on this area 
+The notes section includes the following features:
+- The note editor is a [Trix-Editor](https://trix-editor.org/) using [Rails ActionText](https://edgeguides.rubyonrails.org/action_text_overview.html)
+- The user can create notes which are private and secure from other users
+- The user can create, edit, update, and delete their own notes. 
 
 ## Getting Started
 
@@ -34,7 +39,7 @@ If you plan on deploying to Heroku or an other live service, you will need an ac
 
 Clone this repository to your computer:
 ```
-git clone https://github.com/eclectic-coding/
+git clone git@github.com:eclectic-coding/rails-note-app.git
 ```
 Navigate to your newly created directory and run bundle install. Then set up the database:
 ```
