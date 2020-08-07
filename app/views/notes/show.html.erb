@@ -2,7 +2,11 @@
   <h2><%= @note.title %></h2>
 </div>
 
-<div class="row mx-auto w-50 mb-5">
+<div class="row mx-auto w-50">
+  <small>Created by <%= current_user.name %>, <%= local_date(@note.created_at) %></small>
+</div>
+
+<div class="row mx-auto w-50 mt-2 mb-5">
   <p><%= @note.body %></p>
 </div>
 
