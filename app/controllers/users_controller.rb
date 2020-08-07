@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:success] = 'Welcome to My Notes App'
+      flash[:info] = 'Please check your email to activate your account.'
       redirect_to @user
     else
       flash[:danger] = 'Incorrect'
