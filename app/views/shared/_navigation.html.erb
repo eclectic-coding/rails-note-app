@@ -9,7 +9,7 @@
       <ul class="navbar-nav ml-auto align-items-center">
         <% if logged_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dashboard</a>
+          <%= link_to 'User Dashboard', user_path(current_user), class: "nav-link" %>
         </li>
           <div class="mx-3 nav-link">
             <%= link_to 'Log out', logout_path, method: :delete, class: "btn btn-primary btn-sm" %>

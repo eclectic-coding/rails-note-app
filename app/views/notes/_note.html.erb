@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-sm-6">
+    <% if @notes %>
+      <h1>Notes</h1>
+    <% end %>
+  </div>
+
+  <div class="col-sm-6 w-75">
+    <%= link_to new_note_path, class: 'btn btn-primary' do %>
+      Add New Note
+    <% end %>
+  </div>
+</div>
+
+<div class="row mx-auto">
+  <div class="table-responsive justify-content-center">
+    <table class="table table-bordered table-hover w-75">
+      <thead>
+      <tr>
+        <th width="25%">Title</th>
+        <th width="60%">Description</th>
+        <th width="15%">Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @notes.each do |note| %>
+        <tr>
+          <td>
+            <% if note.title.empty? %>
+              <%= truncate(strip_tags(note.body.to_s), length: 30) %>
+            <% else %>
+              <%= link_to note.title, note_path(note) %>
+            <% end %>
+          </td>
+          <td>
+            <%= truncate(strip_tags(note.body.to_s), length: 100) %>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_note_path(note) %>
+            <%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
