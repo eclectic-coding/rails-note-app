@@ -51,6 +51,8 @@ Install the javascript packages: `yarn`, or `npm install`.
 
 The stylesheets are configured in webpacker, so to start the server, in one terminal: `./bin/webpack-dev-server`. Then in a second terminal window: `rails server`
 
+The other option if to start foreman which is preconfigured: `foreman start`.
+
 ## Running the tests
 The user model has a robust testing suite using the Rails default `minitest`. To run the test: `rails test`, or you can automate the test by using guard that is preinstalled: `bundle exec guard`. 
 

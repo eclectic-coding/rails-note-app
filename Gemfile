@@ -22,6 +22,7 @@ end
 
 group :development do
   gem 'awesome_print'
+  gem 'foreman'
   gem 'listen', '~> 3.2'
   gem 'pry-rails'
   gem 'spring'
