@@ -2,10 +2,6 @@ require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
 
-  def setup
-    ActionMailbox::Base.deliveries.clear
-  end
-
   test 'invalid signup information' do
     get signup_path
     assert_no_difference 'User.count' do
@@ -14,9 +10,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password: 'pass',
                                          password_confirmation: 'word' } }
     end
-    # follow_redirect!
-    # assert_template 'users/new'
-    # assert_select 'div.field_with_errors'
+    assert_template 'users/new'
+    assert_select 'div.field_with_errors'
   end
 
   test 'valid signup information with account activation' do
@@ -32,7 +27,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_not user.activated?
     follow_redirect!
     assert_template 'users/show'
-    # assert is_logged_in?
+    assert_not is_logged_in?
   end
 
 
