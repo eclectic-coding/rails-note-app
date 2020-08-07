@@ -19,13 +19,14 @@ The My Notes App has a robust user authentication feature including:
 - Session tokens created for authorization 
 - Session cookie used to give the user the ability to be remembered on the site or not
 - Password resets request via email authorization
-- User Profile edit/updates  
+- User Profile edit/updates 
 
 ### Notes 
 The notes section includes the following features:
 - The note editor is a [Trix-Editor](https://trix-editor.org/) using [Rails ActionText](https://edgeguides.rubyonrails.org/action_text_overview.html)
 - The user can create notes which are private and secure from other users
 - The user can create, edit, update, and delete their own notes. 
+- If the user forgets to enter a title, the dashboard is configured to display a 30 character truncated string of the body content.  
 
 ## Getting Started
 
