@@ -4,9 +4,7 @@
   <% end %>
 
   <div>
-    <%= link_to new_note_path, class: 'btn btn-primary ml-5' do %>
-      Add New Note
-    <% end %>
+    <%= link_to 'Add new Note', new_note_path, class: 'btn btn-primary ml-5' %>
   </div>
 
   <div class="mx-auto mt-5 w-100">
@@ -30,9 +28,7 @@
                 <%= link_to note.title, note_path(note) %>
               <% end %>
             </td>
-            <td>
-              <%= truncate(strip_tags(note.body.to_s), length: 100) %>
-            </td>
+            <td><%= truncate(strip_tags(note.body.to_s), length: 100) %></td>
             <td>
               <%= link_to 'Edit', edit_note_path(note) %>
               <%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %>

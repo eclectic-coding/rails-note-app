@@ -13,8 +13,9 @@
 <div class="mx-auto mt-5">
 
   <% if @notes.empty? %>
-    <%= link_to new_note_path, class: 'btn btn-primary' %>
-    Add New Note
+    <div class="mx-auto text-center">
+      <%= link_to 'Add your first note', new_note_path, class: 'btn btn-primary' %>
+    </div>
   <% else %>
     <%= render 'notes/note' %>
   <% end %>

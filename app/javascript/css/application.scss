@@ -1,5 +1,40 @@
 @import '@fortawesome/fontawesome-free';
 
+.hero {
+  background-image: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.3)
+  ), url('~notes.jpg');
+  background-size: cover;
+  height: 60vh;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 2rem;
+}
+
+.svg-icon {
+  width: 1em;
+  height: 1em;
+
+  &__homegrid {
+    width: 6rem;
+    height: 6rem;
+    margin: 2rem 0;
+  }
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #4691f6;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
 .nav-link {
   color: white !important;
 }
@@ -36,6 +71,12 @@
       padding: 0 !important;
       max-width: 100% !important;
     }
+  }
+}
+
+trix-editor {
+  &.form-control {
+    height: auto;
   }
 }
 
