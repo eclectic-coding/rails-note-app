@@ -67,12 +67,12 @@ Rails.application.configure do
   host = 'cs-note-app.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
+    user_name: 'akikey',
+    password: Rails.application.credentials.dig(:sendgrid_api_key),
+    domain: 'heroku.com',
     address: 'smtp.sendgrid.net',
     port: '587',
     authentication: :plain,
-    user_name: 'apikey',
-    password: Rails.application.credentials.dig(:sendgrid_api_key),
-    domain: 'heroku.com',
     enable_starttls_auto: true
   }
 
