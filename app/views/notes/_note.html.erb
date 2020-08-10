@@ -30,8 +30,12 @@
             </td>
             <td><%= truncate(strip_tags(note.body.to_s), length: 100) %></td>
             <td>
-              <%= link_to 'Edit', edit_note_path(note) %>
-              <%= link_to 'Delete', note_path(note), method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to edit_note_path(note) do %>
+                <%= fa_icon 'edit', class: "mx-2", style: "color: green" %>
+              <% end %>
+              <%= link_to note_path(note), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <%= fa_icon 'trash', style: "color: red" %>
+              <% end %>
             </td>
           </tr>
         <% end %>
