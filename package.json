@@ -8,7 +8,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@rails/actioncable": "^6.0.2",
     "@rails/actiontext": "^6.0.3",
-    "@rails/activestorage": "^6.0.0",
+    "@rails/activestorage": "^6.0.2",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.2.2",
     "bootstrap": "^4.5.1",
